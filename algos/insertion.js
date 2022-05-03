@@ -43,7 +43,9 @@ const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * @param {Array<number>} nums
  * @returns {Array<number>} The given array after being sorted.
  * 
- * Lopp goes left to right, then right to left
+ * Lopp goes left to right, then right to left. is a for loop, right. is a while loop
+ * interview quesitons: when we exit our loop, we need to save our spot where we started- why use j?
+ * If we did not save our spot, it would have to go through the loop again- revisiting the elements
  */
 function insertionSort(nums) {
 // start at position 1
@@ -52,8 +54,9 @@ function insertionSort(nums) {
         let currentIndex = i;
         // as long the value to the left of the current value is greater than it (right) swap and move to the left. 
        while(nums[currentIndex-1] > nums[currentIndex]){
+           //this swaps the value of the current i with the i to the left, then the swap happens
         [nums[currentIndex], nums[currentIndex-1]] = [nums[currentIndex -1], nums[currentIndex]];
-        //we need to decrement so that the value swamp is still less than the current index
+        //we need to decrement so that the value swamp is still less than the current index, make sure the value on the left is less than the right still
         currentIndex--
        }
 
@@ -62,5 +65,6 @@ function insertionSort(nums) {
 }
 
 console.log(insertionSort(numsRandomOrder));
+console.log(insertionSort(numsReversed));
 
 /*****************************************************************************/
