@@ -1,3 +1,15 @@
-console.log("tessst")
-console.log("tessst number two")
-console.log("tessst number threeee beeeee")
+var sayHello1 = function(name) {
+    console.log('Hello ' + name);
+  };
+
+  sayHello1("meow");
+
+
+  const sayHello = (name) => {
+    console.log(`Hello ${name}`);
+  };
+
+  sayHello("teola");
+
+  
+  
