@@ -46,11 +46,19 @@ const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * Lopp goes left to right, then right to left
  */
 function insertionSort(nums) {
-
-    for(let i = 0; i<nums.length; i++){
+// start at position 1
+    for(let i = 1; i<nums.length; i++){
+        // console.log(nums[i])
+        let currentIndex = i;
+        // as long the value to the left of the current value is greater than it (right) swap and move to the left. 
+       while(nums[currentIndex-1] > nums[currentIndex]){
+        [nums[currentIndex], nums[currentIndex-1]] = [nums[currentIndex -1], nums[currentIndex]];
+        //we need to decrement so that the value swamp is still less than the current index
+        currentIndex--
+       }
 
     }
-
+    return nums;
 }
 
 console.log(insertionSort(numsRandomOrder));
