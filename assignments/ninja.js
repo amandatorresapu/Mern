@@ -7,46 +7,44 @@ class Ninja {
     }
 
     sayName (){
-        console.log('my name is ${this.name}');
+        console.log(`my name is ${this.name}`);
         return this;
     }
 
     showStats (){
-        console.log('name:  ${this.name}');
-        console.log('health: ${this.health}');
-        console.log('Speed: ${this.speed}');
-        console.log('strength: ${this.strength}');
+        console.log(`name:  ${this.name}`);
+        console.log(`health: ${this.health}`);
+        console.log(`Speed: ${this.speed}`);
+        console.log(`strength: ${this.strength}`);
         return this;
     }
 
     drinkSake (){
-        console.log('${this.name} drank sake');
+        console.log(`${this.name} drank sake`);
         this.health += 10;
         return this;
     }
 
-//     parentFunction(){
-//         return "This is coming from the parent!";
-//     }
-// }
-// // child M5 class
-// class sensi extends Ninja {
-//     constructor(color) {
-//         super("BMW", "M5", color);
-//     }
-//     // simple function in the child class
-//     childFunction() {
-//         // by using super, we can call the parent method
-//         const message = super.parentFunction();
-//         console.log(message);
-//     }
-// }
-// const m5 = new M5("Blue");
-// m5.childFunction();
-    
-// }
 }
-    const ninja1 = new Ninja("meow meow");
+// child Sensi class
+class Sensi extends Ninja {
+    constructor(name, health=10, wisdom ) {
+        super(name, health=10, wisdom);
+        this.wisdom = 100;
+    }
+    // simple function in the child class
+    speakWisdom() {
+        this.widsom +=100;
+        console.log(`What one programer can do in one month, two programers can do in two months..hoe`);
+        return this;
+    }
+}
+    let dojo1 = new Sensi("meow of the meow");
+    dojo1.sayName().speakWisdom();
+    console.log(dojo1)
+    
+
+    const ninja1 = new Ninja("Amanda Meow");
     ninja1.sayName().showStats().drinkSake().showStats();
     console.log(ninja1)
 
