@@ -28,9 +28,9 @@ class Ninja {
 }
 // child Sensi class
 class Sensi extends Ninja {
-    constructor(name, health=10, wisdom ) {
-        super(name, health=10, wisdom);
-        this.wisdom = 100;
+    constructor(name, health=10, wisdomInput ) {
+        super(name, health=10);
+        this.wisdom = wisdomInput;
     }
     // simple function in the child class
     speakWisdom() {
@@ -39,13 +39,13 @@ class Sensi extends Ninja {
         return this;
     }
 }
-    let dojo1 = new Sensi("meow of the meow", health=10, 98);
-    dojo1.sayName().speakWisdom();
+    let dojo1 = new Sensi("meow of the meow",health=10, 78);
+    dojo1.sayName().speakWisdom().showStats();
     console.log(dojo1)
     
 
     let ninja1 = new Ninja("Amanda Meow");
-    ninja1.sayName().showStats().drinkSake().showStats();
+    ninja1.sayName().showStats().drinkSake().showStats()
     console.log(ninja1)
 
 
