@@ -39,12 +39,12 @@ class Sensi extends Ninja {
         return this;
     }
 }
-    let dojo1 = new Sensi("meow of the meow");
+    let dojo1 = new Sensi("meow of the meow", health=10, 98);
     dojo1.sayName().speakWisdom();
     console.log(dojo1)
     
 
-    const ninja1 = new Ninja("Amanda Meow");
+    let ninja1 = new Ninja("Amanda Meow");
     ninja1.sayName().showStats().drinkSake().showStats();
     console.log(ninja1)
 
