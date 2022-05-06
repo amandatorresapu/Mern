@@ -12,6 +12,8 @@ let[imgUrl, setImgUrl] = useState("");
 let[specialReq, setSpecialReq] = useState("");
 
 
+
+
     return (
 
         <>
@@ -20,10 +22,15 @@ let[specialReq, setSpecialReq] = useState("");
                 <div className="form-group">
                     <label htmlFor=''>Name:</label>
                     <input text="text" name="" id="" className="form-control" onChange={(e)=>setName(e.target.value)}></input>
+                    {name.length<1? <p>name must be at least 2 charaters</p> :null }
                 </div>
                 <div className="form-group">
                     <label htmlFor=''>age:</label>
                     <input type="number" name="" id="" className="form-control"onChange={(e)=>setAge(e.target.value)}></input>
+
+                    {
+                        age<1? <p>Min age of 1 is required</p> : null
+                    }
                 </div>
                 <div className="form-group">
                     <label htmlFor=''>type:</label>
@@ -36,6 +43,8 @@ let[specialReq, setSpecialReq] = useState("");
                 <div className="form-group">
                     <label htmlFor=''>Date:</label>
                     <input type="date" name="" id="" className="form-control" onChange={(e)=>setDate(e.target.value)}></input>
+                   
+
                 </div>
                 <div className="form-group">
                     <label htmlFor=''>Pet Image URL:</label>
