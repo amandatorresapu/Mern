@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+
+.box-card {
+  color: black;
+  border: 1px solid black ;
+  width: 250px;
+  height: 250px;
+
+}
+
+.box-list {
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
