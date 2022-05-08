@@ -5,7 +5,7 @@ import NinjaForm from './components/NinjaForm'
 function App() {
   return (
     <div className="App container">
-     <h1>Ninja pets</h1>
+     <h1>Pet Generator</h1>
      <NinjaForm></NinjaForm>
     </div>
   );

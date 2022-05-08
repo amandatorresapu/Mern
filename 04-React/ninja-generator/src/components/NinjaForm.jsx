@@ -30,6 +30,11 @@ const NinjaForm = ()=>{
 
        // use the setPetList setter to update the petList array to have the pet object inside of it
        setPetList([...petList, pet])
+
+        // clear out the state variables so that we can use this to empty the form inputs
+       setName("");
+       setColor("");
+       setProPicUrl("")
     }
 
     return(
@@ -39,17 +44,17 @@ const NinjaForm = ()=>{
             <form onSubmit={submitPet}>
                 <div className="form-group">
                     <label htmlFor=''>Name:</label>
-                    <input text="text" name="" id="" className="form-control" onChange={(e)=>setName(e.target.value)} ></input>
+                    <input text="text" name="" id="" className="form-control" onChange={(e)=>setName(e.target.value)} value={name} ></input>
                     
                 </div>
                 <div className="form-group">
                     <label htmlFor=''>Profile pic URL:</label>
-                    <input text="text" name="" id="" className="form-control"onChange={(e)=>setProPicUrl(e.target.value)} ></input>
+                    <input text="text" name="" id="" className="form-control"onChange={(e)=>setProPicUrl(e.target.value)} value={proPicUrl} ></input>
                     
                 </div>
                 <div className="form-group">
                     <label htmlFor=''>Belt color:</label>
-                    <input text="text" name="" id="" className="form-control" onChange={(e)=>setColor(e.target.value)} ></input>
+                    <input text="text" name="" id="" className="form-control" onChange={(e)=>setColor(e.target.value)} value={color} ></input>
                     
                 </div>
                 
@@ -63,7 +68,7 @@ const NinjaForm = ()=>{
             petList.map((petObj, idx)=>{ 
             
             return (
-                <div className="pet-card" style={{backgroundColor: petObj.color}}>
+                <div key={idx} className="pet-card" style={{backgroundColor: petObj.color}}>
                    <h1>{petObj.name}</h1>
                    <img src={petObj.proPicUrl} width="250px"></img>
                    
