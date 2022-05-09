@@ -7,7 +7,7 @@ let [pokemonList, setPokemonList]= useState([])
 
 
     const getPokemon = () =>{
-        console.log("getting the coins now")
+        console.log("getting the Pokemon now")
         console.log("1");
         //fetch gives back a promise. a promise is a set of code that is asynchronious (it does not go from line to line) where the response time is not exact and we can allow it to perform some task or run some code while it is wating to get bak the response.  when it gets back the reponse, we can tell it what to do in the .then()
 
@@ -20,8 +20,8 @@ let [pokemonList, setPokemonList]= useState([])
             })
             .then( response=>{
               //always log the reponse!!!
-                console.log("got the response-->", response) // when dog gets the ball back/ reponse back
-                setPokemonList(response)
+                console.log("got the response-->", response.results) // when dog gets the ball back/ reponse back
+                setPokemonList(response.results)
                 }
                 
             )
@@ -38,13 +38,13 @@ let [pokemonList, setPokemonList]= useState([])
     return (
         <>
         <div className='pokemon-card'>
-        <button onClick={getPokemon}> click me to get the latest information</button>
+        <button onClick={getPokemon}> Get Pokemon List</button>
 
         {
-            pokemonList.map((pokemon, idx)=>{
+             pokemonList && pokemonList.map((pokemon, idx)=>{
                     return (
                     <div key={idx}>
-                        <h3>{pokemon.count}</h3>
+                        <h3>{pokemon.name}</h3>
                     </div>
                      )
                  })
