@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import axios from 'axios';
+
 
 const Pokemon = () => {
 
@@ -13,15 +15,11 @@ let [pokemonList, setPokemonList]= useState([])
 
         // **ANOLOGY- you are throwing a ball to your dog, waiting for them to get it...while your dog is doing that, you  are multi tasking, and texting or talking to  someone
         // **the dog fetching the ball... 
-        fetch("https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0")
-            .then(response =>{ // .then  means whenever the api is done getting back the data
-              
-                return response.json() // convert to json that our application can read
-            })
+        axios.get("https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0")
             .then( response=>{
               //always log the reponse!!!
-                console.log("got the response-->", response.results) // when dog gets the ball back/ reponse back
-                setPokemonList(response.results)
+                console.log("got the response-->", response.data.results) // when dog gets the ball back/ reponse back
+                 setPokemonList(response.data.results)
                 }
                 
             )
