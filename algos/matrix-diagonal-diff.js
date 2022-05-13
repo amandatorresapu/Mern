@@ -48,27 +48,40 @@
     [9, 8, 9],
   ];
 
-
-    function diagonalDifference(sqrMatrix) {
-        let sum1 = 0;
-        let sum2= 0;
-        let x = 0;
-        let y = 0;
-
-    //looop as long as x is less than lenghth of sqrMatix and y is less than the lenght ofo sqrmatrix
-
-    while (x < sqrMatrix.length && y < sqrMatrix.length){
-        console.log(sqrMatrix[x][y])
-        console.log(sum1+=sqrMatrix[x][y])
-        y ++;
-        x ++;
-       
-    }
-
-
-      
-}
-
-console.log(diagonalDifference(squareMatrix1));
+   function diagonalDifference(sqrMatrix) {
+    //need 2 variables for the sums (sum1 and sum2?)
+    //need 2 iterators (x and y?)
+    let sum1 = 0;
+    let sum2 = 0;
+    let x = 0;
+    let y = 0;
   
-  /*****************************************************************************/
+    //loop as long as x is less than length of sqrMatrix and y is less than the length of sqrMatrix
+    while (x < sqrMatrix.length && y < sqrMatrix.length) {
+      console.log(sqrMatrix[y][x]);
+      sum1 += sqrMatrix[y][x];
+      x++;
+      y++;
+    }
+    console.log(sum1);
+    console.log("x and y after while loop i sfinished", x, y);
+    x--;
+    y = 0;
+    //loop as long as x is greater than or equal to 0 and y is less than the length of the array
+    while (x >= 0 && y < sqrMatrix.length) {
+      console.log(sqrMatrix[y][x]);
+      sum2 += sqrMatrix[y][x];
+      x--;
+      y++;
+    }
+    console.log(sum2);
+    return Math.abs(sum1 - sum2);
+  }
+  
+  console.log(diagonalDifference(squareMatrix1));
+  console.log(diagonalDifference(squareMatrix2));
+  
+  /*********************************************************************
+   * ********/
+
+ 

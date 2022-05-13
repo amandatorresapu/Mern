@@ -43,11 +43,11 @@ let [pokemonList, setPokemonList]= useState([])
                     return (
                     <div key={idx}>
                         <h3>{pokemon.name}</h3>
+                        
                     </div>
                      )
                  })
              }
-
 
 
         </div>
