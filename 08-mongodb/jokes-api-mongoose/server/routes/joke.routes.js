@@ -8,9 +8,13 @@ module.exports = (app)=>{
 app.get("/api/hello", JokeController.sayHello);
 app.get("/api/jokes", JokeController.findAllJokes);
 app.post("/api/jokes", JokeController.createJoke);
+// //find random jokes
+// app.get("/api/jokes/random", JokeController.findRandomJoke)
+
 app.get("/api/jokes/:id", JokeController.findOneJoke)
 app.put("/api/jokes/:_id", JokeController.updateJoke)
 app.delete("/api/jokes/:_id", JokeController.deleteJoke)
+
 
 
 

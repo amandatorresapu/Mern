@@ -56,3 +56,13 @@ module.exports.deleteJoke = (req, res)=> {
     .catch(err=>{res.json({msg:"something went wrong", error: err})
      })
 }
+
+// module.exports.findRandomJoke = (req,res)=>{
+//     //get a random index number from index 0 up to but not including allJokes.length
+//     let randomIdx = Math.floor(Math.random()* findAllJokes.length)
+
+//     Joke.find()
+//         .then(findRandJoke=>res.json({results: findRandJoke[randomIdx]}))
+//         .catch(err=>{res.json({msg:"something went wrong", error: err})
+//     })
+// }
