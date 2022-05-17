@@ -1,5 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import {
+    
+    Link 
+  } from "react-router-dom";
 
 
 
@@ -30,7 +34,7 @@ const AllProducts=()=>{
                   return (
                       
                             <div key={productsObj._id}>
-                                <h5>Title: {productsObj.title}</h5>
+                                <h5>Title: <a href={`/products/${productsObj._id}`}>{productsObj.title}</a> </h5>
                                 <h5>Price: {productsObj.price}</h5>
                                 <h5>Description: {productsObj.description}</h5>
                             </div>

@@ -11,7 +11,7 @@ app.post("/api/products", ProductController.createProduct);
 // //find random jokes
 // app.get("/api/jokes/random", JokeController.findRandomJoke)
 
-app.get("/api/products/:id", ProductController.findOneProduct)
+app.get("/api/products/:_id", ProductController.findOneProduct)
 app.put("/api/products/:_id", ProductController.updateProduct)
 app.delete("/api/products/:_id", ProductController.deleteProduct)
 

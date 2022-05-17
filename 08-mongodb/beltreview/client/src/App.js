@@ -9,6 +9,7 @@ import './App.css';
 
 import Form from './components/Form';
 import AllProducts from './components/AllProducts';
+import OneProduct from './components/OneProduct';
 
 function App() {
   return (
@@ -23,6 +24,10 @@ function App() {
           <hr />
           <AllProducts></AllProducts>
          
+          </Route>
+          <Route exact path="/products/:_id">
+            <h1>showing info about one product</h1>
+            <OneProduct></OneProduct>
           </Route>
         </Switch>
       </div>

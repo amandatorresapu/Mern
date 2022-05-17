@@ -26,8 +26,9 @@ module.exports.createProduct = (req, res)=> {
 //find one joke
 module.exports.findOneProduct = (req, res)=> {
     //req.body represent form information
-    Product.findOne({_id: req.params.id})
+    Product.findOne({_id: req.params._id})
     .then(oneProduct=>{
+        
         res.json({results: oneProduct })
         })
     .catch(err=>{res.json({msg:"something went wrong", error: err})
