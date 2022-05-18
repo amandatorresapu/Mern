@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const Form=()=>{
+const Form=(props)=>{
 
   
     let [title, setTitle] = useState("");
@@ -31,6 +31,8 @@ const Form=()=>{
                 setTitle("");
                 setPrice("");
                 setDescription("");   
+
+                props.setFormSubmitted(!props.formSubmitted);
                 }
 
            
