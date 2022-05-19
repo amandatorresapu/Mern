@@ -6,7 +6,7 @@
 */
 
 const obj1 = {
-    name: "Pizza",
+    name: "Pizzas",
     calories: 9001,
 };
   
