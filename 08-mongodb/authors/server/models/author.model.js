@@ -9,6 +9,16 @@ const AuthorSchema = new mongoose.Schema({
         required: [true, "Name is required!"],
         minlength: [3, "Name must be at least 3 charasters"]
     },
+//this is option becuase there is no required
+    isPublish: {
+        type: Boolean
+    },
+
+    books: {
+        type: Number,
+        required: [true, "Must have a min number"],
+        min: [1, "Books must have at least 1 number"]
+    }
    
   
 },{timestamps: true});
