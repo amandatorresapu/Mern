@@ -15,9 +15,6 @@ import EditProductForm from './components/EditProductForm';
 
 // how to re render the page with updates
 
-
-
-
 function App(props) {
 
   const[formSubmitted, setFormSubmitted] = useState(false)
