@@ -5,6 +5,7 @@ import {
     
     Link 
   } from "react-router-dom";
+ 
 
 const Form=()=>{
 
@@ -12,6 +13,7 @@ const Form=()=>{
     let [name, setName] = useState("");
     let [breed, setBreed] = useState("");
     let [description, setDescription] = useState("");
+    let [profilePicUrl, setProfilePicUrl] = useState("");
     let [skill1, setSkill1] = useState("");
     let [skill2, setSkill2] = useState("");
     let [skill3, setSkill3] = useState("");
@@ -26,7 +28,7 @@ const Form=()=>{
         e.preventDefault();
 
     // package up in an object
-        let formInfo= { name, breed, description, skill1, skill2, skill3}
+        let formInfo= { name, breed, description, skill1, skill2, skill3, profilePicUrl}
 
         axios.post("http://localhost:8000/api/redbelt", formInfo)
             .then(res=>{
@@ -46,6 +48,7 @@ const Form=()=>{
                 setSkill1("");
                 setSkill2("");
                 setSkill3("");
+                setProfilePicUrl("");
 
                 history.push("/")
                 }
@@ -83,6 +86,13 @@ const Form=()=>{
                         <label htmlFor=''>Description:</label>
                             <input type="text" onChange={(e)=>setDescription(e.target.value)} className='form-control' value={description}  />
                           <p>{errors.description?.message}</p>
+                            
+                        </div>
+
+                        <div className="form-group">
+                        <label htmlFor=''>Image:</label>
+                            <input type="text" onChange={(e)=>setProfilePicUrl(e.target.value)} className='form-control' value={profilePicUrl}  />
+                          
                             
                         </div>
 

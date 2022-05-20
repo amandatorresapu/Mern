@@ -42,24 +42,60 @@ const AllPets = ()=> {
     return (
 
         <>
-        <h1>These pets are looking for a good home</h1>
-        {
-              allPets.map((petsObj, idx)=>{
-                  return (
-                      
-                            <div key={petsObj._id}>
-                                <h5>Name: {petsObj.name}</h5>
-                                <h5>Type/Breed: {petsObj.breed}</h5>
-                                {/* <h5>Description: {petsObj.description}</h5> */}
-                                <p><Link to={`/redbelt/${petsObj._id}`}className='btn btn-primary'>Details</Link></p>
-                                <p><Link to={`/edit/${petsObj._id}`} className='btn btn-primary'>Edit</Link></p>
-                                {/* <button className='btn btn-danger' onClick={(e)=>{deletePet(petsObj._id)}} >Adopt</button> */}
-                                
-                            </div>
+        
+
+        <div>
+            
+            <div id="wrapper">
+  
+                        <span id="controlL" class="left-controls" role="button" aria-label="See Previous Modules">
+                          <b className="fa fa-chevron-left fa-chevron-left-extra" aria-hidden="true"></b>
+                        </span>
                         
-                        )
-                    })
-          }
+                        <h1>These pets are looking for a good home</h1>
+                       
+                        <div className="module-section clearfix">
+                          {/* <button class="btn arrow-guides fa-chevron-left"></button> */}
+                         <ul id="content">
+                          {
+                              allPets.map((petsObj, idx)=>{
+                                  return(
+                                    <li key={petsObj._id} className="card effect1" style = {{backgroundImage: `url(${petsObj.profilePicUrl})` , backgroundRepeat:'no-repeat', width: '250px'}}>
+                                        
+                                            
+                                            <h5><a href={`/redbelt/${petsObj._id}`}>{petsObj.name}</a></h5>
+                                            <p>Number of projects: {petsObj.description}</p>
+                                        {/* <img src={ninja.profilePicUrl} height = "100px" width= "100px"/> */}
+                                        
+                                    </li>
+
+                                  )
+                              })
+                          }
+                           
+                          
+                          
+                         </ul>
+                          
+                         
+                          
+                        </div>
+                        
+                      <span id="controlR" class="right-controls" role="button" aria-label="See Previous Modules">
+                          <b className="fa fa-chevron-right fa-chevron-right-extra" aria-hidden="true"></b>
+                        </span>
+                       {/* <button class="btn arrow-guides-right fa-chevron-right"></button> */}
+                        
+                        
+                        
+                      </div>
+            
+            
+        </div>
+
+
+
+        
       </>
     )
 }

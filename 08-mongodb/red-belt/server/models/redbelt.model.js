@@ -21,6 +21,9 @@ const RedbeltSchema = new mongoose.Schema({
         required: [true, "Must have a description"],
         minlength: [3, "Name must be at least 3 charasters"]
     },
+    profilePicUrl: {
+        type: String
+    },
     //this is option becuase there is no required
     skill1: {
         type: String, 

@@ -7,6 +7,8 @@ import {
   } from "react-router-dom";
 import axios from 'axios';
 
+import FormFile from './FormFile';
+
 const EditPets =()=> {
 
 const { _id } = useParams();
@@ -48,51 +50,11 @@ const submitHandler = (e) =>{
     return (
         <>
        
-        <h3>Edit  {petsInfo.name}</h3>
-        <Link to='/'>Home</Link>
-         <form onSubmit={submitHandler} className="p-1 justify-content-center align-items-center" >
-                        
-                        <div className="form-group">
-                        <label htmlFor=''>Author:</label>
-                            <input type="text" name="name" onChange={changeHandler}  className='form-control' value={petsInfo.name}  />
-                         
-                            
-                        </div>
-                        <div className="form-group ">
-                            <label htmlFor=''>Breed/type:</label>
-                            <input type="text" name="breed" onChange={changeHandler}   className='form-control' value={petsInfo.breed}  />
-                            
-                        </div>
+            <h3>Edit  {petsInfo.name}</h3>
+            <Link to='/'>Home</Link>
+            <FormFile changeHandler={changeHandler} submitHandler={submitHandler} petsInfo={petsInfo} ></FormFile>
 
-                        <div className="form-group ">
-                            <label htmlFor=''>Description:</label>
-                            <input type="text" name="description" onChange={changeHandler}   className='form-control' value={petsInfo.description}  />
-                            
-                        </div>
-
-                        <div className="form-group ">
-                            <label htmlFor=''>skill 1:</label>
-                            <input type="text" name="skill1" onChange={changeHandler}   className='form-control' value={petsInfo.skill1}  />
-                            
-                        </div>
-                        <div className="form-group ">
-                            <label htmlFor=''>skill 2:</label>
-                            <input type="text" name="skill2" onChange={changeHandler}   className='form-control' value={petsInfo.skill2}  />
-                            
-                        </div>
-                        <div className="form-group ">
-                            <label htmlFor=''>skill 3:</label>
-                            <input type="text" name="skill3" onChange={changeHandler}   className='form-control' value={petsInfo.skill3}  />
-                            
-                        </div>
-                        
-                        
-                            <input type="submit" value="Edit Pet information" className='btn btn-success' />
-                    
-
-                    </form>
-
-                    <Link to='/'>Cancel</Link>
+            <Link to='/'>Cancel</Link>
         
         
         

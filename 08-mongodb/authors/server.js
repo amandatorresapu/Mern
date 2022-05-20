@@ -1,7 +1,7 @@
 const express = require("express"); // import express so we can use express features
 const cors = require("cors"); // import cors- corss origin resourse sharing
 const app = express(); // create our app variable which is an instance of express
-const port = 8000;
+const port = 27017;
  
 //Need to have these 2 lines before routes
 app.use(express.json()); // lets our app convert form info into json
