@@ -5,7 +5,7 @@ import Coins from './components/Coins'
 function App() {
   return (
     <div className="App">
-      <h1>Cypto API: check your price</h1>
+      <h1>Cypto API</h1>
      < Coins></Coins>
     </div>
   );
