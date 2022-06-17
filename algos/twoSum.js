@@ -40,8 +40,8 @@ function twoSum(nums, targetSum) {
          }
       return answer
 }
-console.log(twoSum(nums3, targetSum1));
-console.log(twoSum(nums2, targetSum1));
+console.log(twoSum(nums3, targetSum3));
+console.log(twoSum(nums2, targetSum2 ));
 console.log(twoSum(nums1, targetSum1));
 
 /*****************************************************************************/
