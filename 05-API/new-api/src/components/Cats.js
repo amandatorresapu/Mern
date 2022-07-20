@@ -3,7 +3,7 @@ import react, {useState} from 'react';
 
 
 const Cats = ()=>{
-    let [catList, setCatList]= useState([])
+    let [catList, setCatList]= useState({})
 
     const getCats = ()=>{
         console.log("getting the coins now")
