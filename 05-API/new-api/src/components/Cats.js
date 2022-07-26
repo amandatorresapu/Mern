@@ -38,7 +38,7 @@ const Cats = ()=>{
                         <p><img src={cat.url} alt="" /></p>
                         </div>
                 
-                })
+                )})
             }
         </div>
     )
